@@ -3,21 +3,23 @@ package homework_eight;
 import java.util.Arrays;
 
 public class Rugby {
-    private static int[] teamGenerator(){
+    private static int[] teamGenerator() {
         int[] team = new int[25];
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < team.length; i++) {
             team[i] = (int) (Math.random() * (40 - 18 + 1) + 18);
         }
         return team;
     }
-    private static int meanCalculator(int[]x) {
-        int sum=0;
-        for (int i = 0; i < 25; i++) {
-            sum += x[i];
+
+    private static int meanCalculator(int[] x) {
+        int sum = 0;
+        for (int j : x) {
+            sum += j;
         }
 
-        return  sum / 25;
+        return sum / x.length;
     }
+
     public static void main(String[] args) {
         int[] teamA = teamGenerator();
         int[] teamB = teamGenerator();
